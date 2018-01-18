@@ -28,7 +28,10 @@
     showMonthAfterYear: true,
     yearSuffix: '년',
     minDate : minDate,
-    maxDate : "+10d"
+    maxDate : "+10d",
+    onSelect: function(dateText) {
+    	alert(dateText);
+    }
     
   });
 
@@ -37,8 +40,8 @@
   });
 	
   $("#datepicker1").change(function(){
-	  alert($(this).value());
-  });
+	  alert();
+  }).change();
   
 </script>
 <p>조회기간:
