@@ -82,7 +82,7 @@ public class MyService {
 			System.out.println("-------------------------------------------------------------------------");
 			HashMap<String, String> map = new HashMap<>();
 			fe.forEach((k, v) -> {
-				System.out.println(k + "] " + v);
+				System.out.println(k + " : " + v);
 				map.put(k, v);
 			});
 			result.add(map);
