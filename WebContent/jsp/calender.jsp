@@ -16,6 +16,7 @@
 	//최소 날짜를 오늘 부터 선택가능하게 말한다.
 	var minDate = new Date; 
 	var maxDate = new Date; 
+	
   $.datepicker.setDefaults({
     dateFormat: 'yy-mm-dd',
     prevText: '이전 달',
@@ -29,8 +30,9 @@
     yearSuffix: '년',
     minDate : minDate,
     maxDate : "+10d",
+    
     onSelect: function(dateText) {
-    	alert(dateText);
+    	
     }
     
   });
