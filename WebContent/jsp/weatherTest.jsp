@@ -1,3 +1,4 @@
+<%@page import="constant.Key"%>
 <%@page import="api.TempaeratureAPI"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.List"%>
@@ -7,7 +8,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core"%>
 <%
-	String key = Constant.JAVASCRIPT;
+	String key = "70d78e61bdb96cf13e612f9908e948d0";
 	WeatherAPI weatherAPI = new WeatherAPI();
 	TempaeratureAPI tempAPI = new TempaeratureAPI();
 	List<HashMap<String,String>> tempList = tempAPI.getTemperature();
@@ -29,9 +30,10 @@
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=<%=key%>"></script>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=<%=key%>&libraries=LIBRARY"></script>
+		<script type="text/javascript" src="js/arrayList.js"></script>
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div
-		
+
 		mapLevel = 13,
 		
 		mapOption = {
@@ -52,6 +54,9 @@
 
 		// 마커가 지도 위에 표시되도록 설정합니다
 		marker.setMap(map);
+		
+		var infowindow;
+		var infowindowList = new ArrayList();
 
 		daum.maps.event.addListener(map, 'zoom_changed', function() {        
 		    
@@ -62,24 +67,30 @@
 				iwPosition = new daum.maps.LatLng(36.2683, 127.6358), //인포윈도우 표시 위치입니다
 			    iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
 
-				}else{
-					alert("fasdf");
-					infowindow.close();
-				}
+			    infowindow = new daum.maps.InfoWindow({
+					position : iwPosition,	
+					content : iwContent,
+				    removable : iwRemoveable
+				});
+			    
+			    
+				// 인포윈도우를 생성합니다
+				infowindowList.add(infowindow);
 
-			// 인포윈도우를 생성합니다
-			var infowindow = new daum.maps.InfoWindow({
-				position : iwPosition,
-				content : iwContent,
-			    removable : iwRemoveable
-			});
-				
-				
-				
 				// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
 				infowindow.open(map, marker);
+			    
+				}else if(infowindowList.length() > 0){
+					for(var i = 0; i < infowindowList.length(); i++)
+						infowindowList.get(i).close();
+				}
+				
+				
+				
 					    
 		});
+		
+		
 	</script>
 </body>
 </html>
