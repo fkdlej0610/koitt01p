@@ -16,7 +16,7 @@ table, #map {
 </style>
 </head>
 <body>
-	<form action="contentList.do">
+ 	<form action="contentList.do">
 		<select name="contentTypeId">
 			<option value="32">숙박</option>
 			<option value="12">관광지</option>
