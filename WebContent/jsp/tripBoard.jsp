@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="tripBoardWriteForm.jsp">글쓰기</a>
+<a href="tripBoardView.jsp">글보기</a><!-- boardNum -->
+<a href="tripBoardDelete.do">삭제하기</a><!-- boardNum,userID -->
 
 </body>
 </html>

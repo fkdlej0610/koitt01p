@@ -8,5 +8,8 @@
 </head>
 <body>
 
+<a href="tripBoardUpdateForm.jsp">수정하기</a>
+<a href="tripBoardDelete.do">삭제하기</a><!-- boardNum,userID -->
+<a href="tripBoardLike.do">좋아요</a><!-- boardNum -->
 </body>
 </html>

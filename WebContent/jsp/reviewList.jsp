@@ -10,6 +10,6 @@
 <a href="reviewWriteForm.jsp"></a> <!--contentID-->
 <a href="reviewUpdateForm.jsp"></a><!--num,contentID,userID-->
 <a href="reviewDelete.do">삭제하기</a><!-- num,contentID,userID-->
-<a href="reviewLike.do">좋아요</a>
+<a href="reviewLike.do">좋아요</a><!-- num -->
 </body>
 </html>

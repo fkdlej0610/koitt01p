@@ -7,6 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<form action="tripBoardUpdate.do">
+<input type="text" name="userId"/>
+<input type="text" name="title"/>
+<textarea rows="10" cols="10" name="content"></textarea>
+<input type="text" name="contentID"/>
+<input type="text" name="nickName"/>
+<input type="image" name="picture"/>
+</form>
 </body>
 </html>

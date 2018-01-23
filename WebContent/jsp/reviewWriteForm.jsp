@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<form action="reviewWrite.do">
+<input type="text" name="title"/>
+<textarea rows="10" cols="10" name="content"></textarea>
+<input type="hidden" name="scope" value="5"/>
+<input type="text" name="nickName"/>
+<input type="hidden" name="contentID"/>
+</form>
 </body>
 </html>
