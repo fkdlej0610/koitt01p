@@ -25,7 +25,7 @@ public class APIController {
 		ModelAndView mav = new ModelAndView();
 		
 		mav.addObject("searchInfo", service.searchAPIInfo(search, contentTypeId, areaCode));
-		mav.setViewName("search");
+		mav.setViewName("contentList");
 		return mav;
 	}
 }
