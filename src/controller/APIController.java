@@ -9,14 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import service.APIService;
+import api.SearchAPIService;
 
 @Controller
 public class APIController {
 	@Autowired
-	private APIService service;
+	private SearchAPIService service;
 	
-	@RequestMapping("search.do")
+
+	@RequestMapping("contentList.do")
 	public ModelAndView getSearch(@RequestParam(defaultValue = "") String search, 
 			@RequestParam(defaultValue="") String contentTypeId, 
 			@RequestParam(defaultValue="") String areaCode) throws Exception {

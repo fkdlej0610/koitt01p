@@ -12,7 +12,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+import org.springframework.stereotype.Service;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserFactory;
 
 @Service
 public class SearchAPIService {
@@ -48,7 +50,7 @@ public class SearchAPIService {
         }
         
 
-		XmlPullParser parser = XmlPullParserFactory.newInstance().newPullParser();
+        XmlPullParser parser = XmlPullParserFactory.newInstance().newPullParser();
 		parser.setInput(new InputStreamReader(conn.getInputStream()));
 		for (int eventType = parser.getEventType(); eventType != XmlPullParser.END_DOCUMENT; eventType = parser
 				.next()) {
@@ -56,19 +58,27 @@ public class SearchAPIService {
 				for (eventType = parser.next(); eventType != XmlPullParser.END_TAG
 						|| !parser.getName().equals("item"); eventType = parser.next()) {
 					if (eventType == XmlPullParser.START_TAG)
-						if (parser.getName().equals("title") || parser.getName().equals("addr1")
-								|| parser.getName().equals("mapx") || parser.getName().equals("mapy")
-								|| parser.getName().equals("contentId"))
+						if (parser.getName().equals("title") 
+								|| parser.getName().equals("mapx")
+								||parser.getName().equals("mapy")
+								||parser.getName().equals("contentID")
+								||parser.getName().equals("addr1"))
 							value.put(parser.getName(), parser.nextText());
 				}
-				result.add(value);
-				value = new HashMap<String, String>();
-			}
-		}
-		rd.close();
-		conn.disconnect();
-		return result;
-	}
+        		result.add(value); //result안에 HashMap담기
+        		System.out.println();
+        		value = new HashMap<String, String>(); //HashMap값 초기화(다른값을 다시 담으려고)
+
+        	}
+        	
+
+        }
+
+ 
+        rd.close();
+        conn.disconnect();
+        return result;
+}
 	
 	
 }
