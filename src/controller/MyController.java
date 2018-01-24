@@ -14,8 +14,9 @@ import service.ReviewService;
 public class MyController {
 	@Autowired
 	private MyService service;
+	
 	@Autowired
-	private ReviewService reviewService;
+	private ReviewService rService;
 	
 	@RequestMapping("index.do")
 	public ModelAndView getFestvalInfo() throws Exception {
@@ -29,7 +30,7 @@ public class MyController {
 	@RequestMapping("main.do")
 	public ModelAndView getTopList(@RequestParam String contentTypeID) {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("topList",reviewService.topSelect(contentTypeID));
+		mav.addObject("topList",rService.topSelect(contentTypeID));
 		mav.setViewName("main");
 		return mav;
 	}
