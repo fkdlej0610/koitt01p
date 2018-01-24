@@ -1,7 +1,9 @@
 package dao;
 
+import java.util.List;
+
 public interface IReviewDAO {
 
-	public int topSelect(int contentTypeID);
+	public List<String> topSelect(String contentTypeID);
 	
 }

@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="dao.IReviewDAO">
-  <select id="topSelect" parameterType="int" resultType="int">
+  <select id="topSelect" parameterType="String" resultType="String">
   SELECT contentID
   FROM review
   WHERE contentTypeID = #{contentTypeID} 
