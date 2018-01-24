@@ -28,9 +28,11 @@ public class MyController {
 		return mav;
 	}
 	@RequestMapping("main.do")
-	public ModelAndView getTopList(@RequestParam String contentTypeID) {
+	public ModelAndView getTopList() {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("topList",rService.topSelect(contentTypeID));
+		mav.addObject("topListFestival",rService.topSelectFestival());
+		mav.addObject("topListCountry",rService.topSelectCountry());
+		mav.addObject("topListRestaurant",rService.topSelectRestaurant());
 		mav.setViewName("main");
 		return mav;
 	}

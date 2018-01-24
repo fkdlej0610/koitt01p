@@ -3,11 +3,27 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="dao.IReviewDao">
-  <select id="topSelect" parameterType="String" resultType="String">
-  SELECT contentID
+  <select id="topSelectFestival" resultType="java.util.HashMap">
+  SELECT contentId
   FROM review
-  WHERE contentTypeID = #{contentTypeID} 
-  GROUP BY contentID 
+  WHERE contentTypeId = '12'
+  GROUP BY contentId 
   ORDER BY AVG(score) DESC;
   </select>
+   <select id="topSelectCountry" resultType="java.util.HashMap">
+  SELECT contentId
+  FROM review
+  WHERE contentTypeId = '32'
+  GROUP BY contentId 
+  ORDER BY AVG(score) DESC;
+  </select>
+  
+   <select id="topSelectRestaurant" resultType="java.util.HashMap">
+  SELECT contentId
+  FROM review
+  WHERE contentTypeId = '39'
+  GROUP BY contentId 
+  ORDER BY AVG(score) DESC;
+  </select>
+  
   </mapper>
