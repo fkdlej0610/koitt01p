@@ -12,6 +12,7 @@
 <input type="text" name="nickName"/><br>
 <input type="password" name="password"/><br>
 <input type="password" name="pw_CHECK" placeholder="비밀번호 확인"><br>
+<input type="submit" value="입력"/>
 <!-- regDate도 있습니다.(가입날짜) -->
 </form>
 </body>
