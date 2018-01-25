@@ -62,7 +62,7 @@ public class MyController {
 	}
 	@RequestMapping("createUser.do")
 	public String createUser(@RequestParam HashMap<String, String> params) {
-		if(params.get("pw").equals(params.get("pw_check"))) {
+		if(params.get("password").equals(params.get("pw_CHECK"))) {
 			lService.createUser(params);
 		}
 		return "redirect:main";
