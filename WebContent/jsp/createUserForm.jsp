@@ -8,9 +8,10 @@
 </head>
 <body>
 <form action="createUser.do">
-<input type="text" name="userID"/>
-<input type="text" name="nickName"/>
-<input type="password" name="password"/>
+<input type="text" name="userID"/><br>
+<input type="text" name="nickName"/><br>
+<input type="password" name="password"/><br>
+<input type="password" name="pw_CHECK" placeholder="비밀번호 확인"><br>
 <!-- regDate도 있습니다.(가입날짜) -->
 </form>
 </body>
