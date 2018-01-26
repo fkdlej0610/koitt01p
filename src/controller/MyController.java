@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import service.LoginService;
-import service.MyService;
+import service.APIService;
 import service.ReviewService;
 
 @Controller
 public class MyController {
 	@Autowired
-	private MyService service;
+	private APIService service;
 	
 	@Autowired
 	private LoginService lService;

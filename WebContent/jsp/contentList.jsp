@@ -16,7 +16,7 @@ table, #map {
 </style>
 </head>
 <body>
- 	<form action="contentList.do">
+	<form action="contentList.do">
 		<select name="contentTypeId">
 			<option value="32">숙박</option>
 			<option value="12">관광지</option>
@@ -46,11 +46,13 @@ table, #map {
 		<tr>
 			<th>이름</th>
 			<th>주소</th>
+			<th>ID</th>
 		</tr>
 		<c:forEach var="searchTest" items="${searchInfo }">
 			<tr>
 				<td class="mapCursor"><a onclick="setMap('${searchTest.mapy}', '${searchTest.mapx }', '${searchTest.title }')">${searchTest.title }</a></td>
 				<td>${searchTest.addr1 }</td>
+				<td><a href="contentView.do?contentid=${searchTest.contentid }&contenttypeid=${searchTest.contenttypeid}">바로가기</td>
 			</tr>
 		</c:forEach>
 	</table>
