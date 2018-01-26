@@ -33,6 +33,8 @@ public class LoginService {
     
     
     public void createUser(HashMap<String, String> params) {
+    	if(params.get("password").equals(params.get("pw_CHECK"))) {
     	lDao.createUser(params);
+    	}
     }
 }

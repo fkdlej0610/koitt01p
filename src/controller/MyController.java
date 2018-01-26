@@ -1,4 +1,4 @@
-package controller;
+   package controller;
 
 import java.util.HashMap;
 
@@ -65,7 +65,7 @@ public class MyController {
 		if(params.get("password").equals(params.get("pw_CHECK"))) {
 			lService.createUser(params);
 		}
-		return "redirect:main";
+		return "redirect:main.do";
 	}
 	
 }
